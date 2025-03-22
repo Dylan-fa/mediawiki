@@ -33,7 +33,8 @@
 	// "shutdownAction": "none",
 
 	// Uncomment the next line to run commands after the container is created.
-	"postCreateCommand": "composer update\n/docker/install.sh\nchmod -R o+rwx cache/sqlite",
+	"postCreateCommand": "[[ -f ../.env ]] || echo -e 'MW_DOCKER_UID=$(id -u)\nMW_DOCKER_GID=$(id -g)\nXDEBUG_CONFIG=\"mode=debug start_with_request=yes discover_client_host=1 idekey=VSCODE\"' > ../.env; composer update; /docker/install.sh; chmod -R o+rwx cache/sqlite",
+
 
 	// Configure tool-specific properties.
 	"customizations": {
