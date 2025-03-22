@@ -34,7 +34,7 @@
 
 	// Uncomment the next line to run commands after the container is created.
 	"initializeCommand": "[[ -f ../.env ]] || echo -e 'MW_DOCKER_UID=$(id -u)\nMW_DOCKER_GID=$(id -g)\nXDEBUG_CONFIG=\"mode=debug start_with_request=yes discover_client_host=1 idekey=VSCODE\"' > ../.env",
-	"postCreateCommand": "composer update && /docker/install.sh && chmod -R o+rwx cache/sqlite"
+	"postCreateCommand": "composer update && /docker/install.sh && chmod -R o+rwx cache/sqlite",
 	
 
 	// Configure tool-specific properties.
